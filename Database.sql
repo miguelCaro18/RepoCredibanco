@@ -21,7 +21,7 @@ create table estado_tarjeta(
     nombre_estado varchar(100),
     primary key (id)
 )Engine=InnoDB;
-insert into  tipo_tarjeta (nombre_tipo) values ('Creada'),('Enrolada'),('Eliminada');
+insert into  estado_tarjeta (nombre_estado) values ('Creada'),('Enrolada'),('Eliminada');
 create table tarjeta(
     pan_tarjeta varchar(19),
     id_titular integer,
@@ -56,7 +56,8 @@ create table transaccion(
     estado_transaccion integer,
     referencia varchar(6),
     fecha_transaccion datetime,
-    primary key (id)
+    primary key (id),
+    unique (referencia)
 )Engine=InnoDB;
 alter table transaccion
     add constraint transaccion_estado_fk
