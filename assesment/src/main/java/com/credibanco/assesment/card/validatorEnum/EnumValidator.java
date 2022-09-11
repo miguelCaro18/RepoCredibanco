@@ -24,7 +24,7 @@ public @interface EnumValidator {
 
     String[] acceptedValues();
 
-    String message() default "{uk.dds.ideskos.validator.ValidateString.message}";
+    String message() default "Default Error Message";
 
     Class<?>[] groups() default { };
 
